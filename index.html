@@ -28,6 +28,9 @@
 
   <!-- Template Main CSS File -->
   <link href="assets/css/style.css" rel="stylesheet">
+  
+  <!-- lib js -->
+  <script src="https://code.jquery.com/jquery-3.5.0.js"></script>
 
   <!-- =======================================================
   * Template Name: iPortfolio - v3.7.0
@@ -103,7 +106,7 @@
             <div class="row">
               <div class="col-lg-6">
                 <ul>
-                  <li><i class="bi bi-chevron-right"></i> <strong>Birthday:</strong> <span>08 September 1995</span></li>
+                  <li><i class="bi bi-chevron-right"></i> <strong>Birthday:</strong> <span id="tgl">08 September 1995</span></li>
                   <li><i class="bi bi-chevron-right"></i> <strong>Website:</strong> <span>kiigeeks.github.io</span></li>
                   <li><i class="bi bi-chevron-right"></i> <strong>Phone:</strong> <span>+62 813-1884-1398</span></li>
                   <li><i class="bi bi-chevron-right"></i> <strong>City:</strong> <span>Surabaya, Indonesia</span></li>
@@ -111,7 +114,7 @@
               </div>
               <div class="col-lg-6">
                 <ul>
-                  <li><i class="bi bi-chevron-right"></i> <strong>Age:</strong> <span>26</span></li>
+                  <li><i class="bi bi-chevron-right"></i> <strong>Age:</strong> <span id="umur"></span></li>
                   <li><i class="bi bi-chevron-right"></i> <strong>Degree:</strong> <span>Bachelor</span></li>
                   <li><i class="bi bi-chevron-right"></i> <strong>Email:</strong> <span>marjukiiahmad@gmail.com</span></li>
                   <li><i class="bi bi-chevron-right"></i> <strong>Freelance:</strong> <span>Available</span></li>
@@ -661,6 +664,29 @@
   <!-- Template Main JS File -->
   <script src="assets/js/main.js"></script>
 
+  <script type="text/javascript">
+    $(document).ready(function(){
+      alert('hai');
+      // format harus "1994-09-08";
+      var date_in = new Date(document.getElementById('tgl').innerHTML);
+      var date = date_in.getFullYear()+"-"+date_in.getMonth()+"-"+date_in.getDate();
+      
+      var today = new Date();
+      var birthday = new Date(date);
+      var year = 0;
+      if (today.getMonth() < birthday.getMonth()) {
+        year = 1;
+      } else if ((today.getMonth() == birthday.getMonth()) && today.getDate() < birthday.getDate()) {
+        year = 1;
+      }
+      var age = today.getFullYear() - birthday.getFullYear() - year;
+  
+      if(age < 0){
+        age = 0;
+      }
+      document.getElementById('umur').innerHTML = age;
+    })
+  </script>
 </body>
 
 </html>
