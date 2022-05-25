@@ -597,11 +597,12 @@
           </div>
 
           <div class="col-lg-7 mt-5 mt-lg-0 d-flex align-items-stretch">
-            <form action="forms/contact.php" method="post" role="form" class="php-email-form">
+            <!-- <form action="forms/contact.php" method="post" role="form" class="php-email-form"> -->
+            <form role="form" name="contact-form" class="php-email-form">
               <div class="row">
                 <div class="form-group col-md-6">
                   <label for="name">Your Name</label>
-                  <input type="text" name="name" class="form-control" id="name" required>
+                  <input type="text" class="form-control" id="nama" name="nama" required>
                 </div>
                 <div class="form-group col-md-6">
                   <label for="name">Your Email</label>
@@ -610,18 +611,24 @@
               </div>
               <div class="form-group">
                 <label for="name">Subject</label>
-                <input type="text" class="form-control" name="subject" id="subject" required>
+                <input type="text" class="form-control" name="subjek" id="subjek" required>
               </div>
               <div class="form-group">
                 <label for="name">Message</label>
-                <textarea class="form-control" name="message" rows="10" required></textarea>
+                <textarea class="form-control" name="pesan" id="pesan" rows="10" required></textarea>
               </div>
-              <div class="my-3">
-                <div class="loading">Loading</div>
-                <div class="error-message"></div>
-                <div class="sent-message">Your message has been sent. Thank you!</div>
+              
+              <div class="alert alert-primary loading-msg d-none" role="alert">
+                Loading ...
               </div>
-              <div class="text-center"><button type="submit">Send Message</button></div>
+              <div class="alert alert-success sent-msg d-none" role="alert">
+                Your message has been sent. Thank you!
+              </div>
+              <div class="alert alert-danger error-msg d-none" role="alert">
+                Sorry, Error
+              </div>
+
+              <div class="text-center"><button type="submit" class="btn-send">Send Message</button></div>
             </form>
           </div>
 
@@ -665,6 +672,41 @@
   <script src="assets/js/main.js"></script>
 
   <script type="text/javascript">
+
+    
+    const scriptURL = 'https://script.google.com/macros/s/AKfycbwFBCB1LYZ4AWLTLo0DBbIXxp-D1ppxfGXfZOOpfkShHBcET3zzMgAEYoVfQsfSmjVZ0w/exec'
+    const form = document.forms['contact-form']
+
+    //ambil class tombol main DOM
+    const alert_loading = document.querySelector('.loading-msg');
+    const alert_success = document.querySelector('.sent-msg');
+    const alert_error = document.querySelector('.error-msg');
+    const btnSubmit = document.querySelector('.btn-send');
+
+    form.addEventListener('submit', e => {
+      e.preventDefault()
+
+      //saat diklik 
+      //tampil pesan loading dan hilangkan tombol
+      btnSubmit.classList.toggle('d-none');
+      alert_loading.classList.toggle('d-none');
+      fetch(scriptURL, { method: 'POST', body: new FormData(form)})
+        .then(response => {
+          console.log('Success!', response)
+          //jika berhasil textbox kosong, tombol tampil, pesan berhasil, matikan pesan loading
+          form.reset();
+          alert_loading.classList.toggle('d-none');
+          alert_success.classList.toggle('d-none');
+          btnSubmit.classList.toggle('d-none');
+        })
+        .catch(error => {
+          console.error('Error!', error.message)
+          alert_loading.classList.toggle('d-none');
+          alert_error.classList.toggle('d-none');
+          btnSubmit.classList.toggle('d-none');
+        })
+    })
+
     $(document).ready(function(){
       // alert('hai');
       // format harus "1994-09-08";
