@@ -7,6 +7,6 @@ License: https://bootstrapmade.com/license/
 
 
 Special Thanks :
-* Web Programming UNPAS
-* Jamie Wilson
-* BootstrapMade
+* Web Programming UNPAS - https://www.youtube.com/c/WebProgrammingUNPAS
+* Jamie Wilson - https://github.com/jamiewilson/form-to-google-sheets
+* BootstrapMade - https://bootstrapmade.com/
