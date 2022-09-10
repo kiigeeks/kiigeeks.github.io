@@ -1,0 +1,407 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Marzuki Portfolio</title>
+    <link href="./dist/img/icon.png" rel="icon">
+    <link rel="stylesheet" href="./dist/css/style.css">
+    <!-- <link rel="stylesheet" href="./dist/output.css"> -->
+    <!-- font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+    <!-- local darkmode -->
+    <script>
+        if (localStorage.theme === 'dark' || (!('theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+            document.documentElement.classList.add('dark')
+        } else {
+            document.documentElement.classList.remove('dark')
+        }
+    </script>
+</head>
+<body class="font-nunito">
+    
+    <!-- header start -->
+    <header class="bg-transparent w-full absolute top-0 left-0 z-10 flex items-center">
+        <div class="container">
+            <div class="flex items-center justify-between py-5 relative">
+                <!-- logo -->
+                <div class="px-4 items-start">
+                    <a href="#home" class="font-bold text-2xl text-primary block">Marzuki</a>
+                </div>
+                <!-- navbar -->
+                <div class="flex items-center px-4">
+                    <button id="hamburger" name="hamburger" type="button" class="block absolute right-4 z-10 lg:hidden">
+                        <span class="hamburger-line transition duration-300 ease-in-out origin-top-left"></span>
+                        <span class="hamburger-line transition duration-300 ease-in-out"></span>
+                        <span class="hamburger-line transition duration-300 ease-in-out origin-bottom-left"></span>
+                    </button>
+                    <nav id="nav-menu" class="hidden absolute py-4 lg:py-0 bg-white dark:bg-dark lg:dark:bg-transparent lg:dark:shadow-none dark:shadow-slate-300 dark:shadow-md shadow-lg shadow-slate-600 rounded-lg w-full left-0 top-0 lg:top-full lg:block lg:static lg:bg-transparent lg:max-w-full lg:shadow-none lg:rounded-none">
+                        <ul class="flex flex-col left-0 top-0 w-full items-center lg:flex-row mt-10 lg:mt-0">
+                            <li class="group"><a href="#home" class="text-lg lg:text-base text-dark  py-2 mx-8 flex group-hover:text-primary dark:text-white">Home</a></li>
+                            <li class="group"><a href="#about" class="text-lg lg:text-base text-dark  py-2 mx-8 flex group-hover:text-primary dark:text-white">About</a></li>
+                            <li class="group"><a href="#portfolio" class="text-lg lg:text-base text-dark  py-2 mx-8 flex group-hover:text-primary dark:text-white">Portfolio</a></li>
+                            <li class="group"><a href="#contact" class="text-lg lg:text-base text-dark  py-2 mx-8 flex group-hover:text-primary dark:text-white">Contact</a></li>
+                            <li class="group"> 
+                                <img id="darkLight" src="./dist/img/moon.png" alt="Dark Mode" class="block lg:hidden animate-wiggle w-5 cursor-pointer">
+                            </li>
+                        </ul>
+                    </nav>
+                </div>
+                <!-- toogle darkmode -->
+                <div class="px-4 items-end">
+                    <img id="darkLight2" src="./dist/img/moon.png" alt="Dark Mode" class="hidden lg:block animate-wiggle w-5 cursor-pointer">
+                </div>
+            </div>
+        </div>
+    </header>
+    <!-- header end -->
+    
+    <!-- hero section start -->
+    <section id="home" class="pt-32 h-full lg:pt-52 dark:bg-dark">
+        <div class="container">
+            <div class="flex flex-wrap">
+                <!-- text kiri -->
+                <div class="w-full self-center px-4 lg:w-1/2">
+                    <h1 class="text-base font-semibold text-primary md:text-xl">
+                        Hi Everyone 👋, I'm
+                        <span class="block font-bold text-dark dark:text-white text-4xl mt-1 lg:text-5xl">Ahmad Marzuki</span> 
+                    </h1>
+                    <h2 class="font-medium text-dark dark:text-white text-lg lg:text-2xl mb-5">I'm a <span id="role" class="font-bold italic"></span></h2>
+                    <p class="font-medium text-secondary dark:text-third mb-10 leading-relaxed">
+                        I have 5+ years of experience and using technologies like PHP, Bootsrap, MySQL.
+                    </p>
+                    <a href="" class="text-base font-semibold text-white bg-primary py-3 px-8 rounded-full hover:shadow-lg hover:opacity-80 transition duration-300 ease-in-out ">My Portfolio</a>
+                </div>
+                <!-- foto kanan -->
+                <div class="w-full self-end px-4 lg:w-1/2">
+                    <div class="relative mt-10">
+                        <img class="relative mx-auto right-0 left-0 bottom-0 lg:bottom-0 " src="./dist/img/me.png" alt="">
+                        <div class="block absolute -bottom-1/4 right-0 left-0 mx-auto w-xsml h-xsml sm:w-sml sm:h-sml md:w-mdm md:h-mdm lg:w-big lg:h-big bg-primary rounded-full -z-10"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- hero section end -->
+
+    <!-- about section start -->
+    <section id="about" class="pt-32 pb-32 bg-slate-100 dark:bg-slate-800 ">
+        <div class="container">
+            <div class="flex flex-wrap">
+                <!-- Experience -->
+                <div class="w-full px-4 mb-10 lg:w-1/2">
+                    <h4 class="font-bold uppercase text-primary text-lg mb-3">About Me</h4>
+                    <h2 class="font-bold text-dark dark:text-white text-3xl mb-5 max-w-xl lg:text-4xl">Web Developer &amp; IT Support</h2>
+                    <p class="font-medium text-base text-secondary dark:text-third lg:text-lg mb-5">
+                        I'm a web developer & IT Support with 5+ years of experience in the healthcare office.
+                    </p>
+
+                    <div class="flex flex-col md:flex-row leading-relaxed">
+                        <div class="w-full mt-3 p-3">
+                            <h3 class="font-semibold text-dark dark:text-white text-xl mb-1 ">IT Support</h3>
+                            <ul class="list-disc p-2 font-medium text-base text-secondary dark:text-third">
+                                <li>Manage network traffic, Maintenance hardware software,</li>
+                                <li>Broadcast Seminar use OBS, Vmix, Zoom, NDI, Youtube.</li>
+                            </ul>
+                        </div>
+                        <div class="w-full mt-3 p-3">
+                            <h3 class="font-semibold text-dark dark:text-white text-xl mb-1 ">Web Developer</h3>
+                            <ul class="list-disc p-2 font-medium text-base text-secondary dark:text-third">
+                                <li>Build App with basically PHP and MySQL,</li>
+                                <li>Build SI Company Profil, Registration Seminar, Retail, Inventory, eCommerce without third party, Property.</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <!-- profile -->
+                <div class="w-full px-4 lg:w-1/2">
+                    <h3 class="font-bold text-dark dark:text-white text-3xl mb-5 lg:mb-1 xl:mb-0 lg:text-4xl lg:pt-10">My Profile</h3>
+                    <div class="flex flex-col gap-5 md:flex-row mb-5 lg:mb-0 lg:p-5">
+                        <div class="relative flex items-center justify-center">
+                            <img src="./dist/img/profil.jpg" alt="" class="w-fit h-fit rounded-full overflow-hidden">
+                        </div>
+
+                        <div class= "flex flex-col items-center justify-center lg:p-3">
+                            <div class="p-3 font-medium text-base text-secondary dark:text-third lg:text-lg">
+                            <p class="mb-5 italic">
+                                I'm love and enjoy coding for something new to make new experience.
+                            </p>  
+                            <p class="mb-1"> <span class="text-dark dark:text-white font-extrabold">Age: </span> 27 years</p>
+                            <p class="mb-1"> <span class="text-dark dark:text-white font-extrabold">Degree: </span> Bachelor</p>
+                            <p class="mb-1"> <span class="text-dark dark:text-white font-extrabold">Freelance: </span> Available</p>
+                            <p class="mb-1"> <span class="text-dark dark:text-white font-extrabold">Location: </span> Surabaya, Indonesia</p>
+                        </div>
+                        </div>
+                    </div>
+    
+                    <div class="flex items-center justify-center">
+                        <a href="https://github.com/kiigeeks" target="_blank" class="w-9 h-9 mr-3 rounded-full flex justify-center items-center border border-secondary text-secondary dark:border-slate-300 dark:text-slate-300 hover:border-primary hover:bg-primary hover:text-white">
+                            <svg class="fill-current" width="20" role="img" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><title>GitHub</title><path d="M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12"/></svg>
+                        </a>
+                        <a href="https://www.linkedin.com/in/ahmad-marzukii/" target="_blank" class="w-9 h-9 mr-3 rounded-full flex justify-center items-center border border-secondary text-secondary dark:border-slate-300 dark:text-slate-300 hover:border-primary hover:bg-primary hover:text-white">
+                            <svg class="fill-current" width="20" role="img" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><title>LinkedIn</title><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
+                        </a>
+                        <a href="https://mail.google.com/mail/?view=cm&fs=1&to=marjukiiahmad@gmail.com" target="_blank" class="w-9 h-9 mr-3 rounded-full flex justify-center items-center border border-secondary text-secondary dark:border-slate-300 dark:text-slate-300 hover:border-primary hover:bg-primary hover:text-white">
+                            <svg class="fill-current" width="20" role="img" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><title>Gmail</title><path d="M24 5.457v13.909c0 .904-.732 1.636-1.636 1.636h-3.819V11.73L12 16.64l-6.545-4.91v9.273H1.636A1.636 1.636 0 0 1 0 19.366V5.457c0-2.023 2.309-3.178 3.927-1.964L5.455 4.64 12 9.548l6.545-4.91 1.528-1.145C21.69 2.28 24 3.434 24 5.457z"/></svg>
+                        </a>
+                        <a href="https://www.instagram.com/amarzukii26/" target="_blank" class="w-9 h-9 mr-3 rounded-full flex justify-center items-center border border-secondary text-secondary dark:border-slate-300 dark:text-slate-300 hover:border-primary hover:bg-primary hover:text-white">
+                            <svg class="fill-current" width="20" role="img" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><title>Instagram</title><path d="M12 0C8.74 0 8.333.015 7.053.072 5.775.132 4.905.333 4.14.63c-.789.306-1.459.717-2.126 1.384S.935 3.35.63 4.14C.333 4.905.131 5.775.072 7.053.012 8.333 0 8.74 0 12s.015 3.667.072 4.947c.06 1.277.261 2.148.558 2.913.306.788.717 1.459 1.384 2.126.667.666 1.336 1.079 2.126 1.384.766.296 1.636.499 2.913.558C8.333 23.988 8.74 24 12 24s3.667-.015 4.947-.072c1.277-.06 2.148-.262 2.913-.558.788-.306 1.459-.718 2.126-1.384.666-.667 1.079-1.335 1.384-2.126.296-.765.499-1.636.558-2.913.06-1.28.072-1.687.072-4.947s-.015-3.667-.072-4.947c-.06-1.277-.262-2.149-.558-2.913-.306-.789-.718-1.459-1.384-2.126C21.319 1.347 20.651.935 19.86.63c-.765-.297-1.636-.499-2.913-.558C15.667.012 15.26 0 12 0zm0 2.16c3.203 0 3.585.016 4.85.071 1.17.055 1.805.249 2.227.415.562.217.96.477 1.382.896.419.42.679.819.896 1.381.164.422.36 1.057.413 2.227.057 1.266.07 1.646.07 4.85s-.015 3.585-.074 4.85c-.061 1.17-.256 1.805-.421 2.227-.224.562-.479.96-.899 1.382-.419.419-.824.679-1.38.896-.42.164-1.065.36-2.235.413-1.274.057-1.649.07-4.859.07-3.211 0-3.586-.015-4.859-.074-1.171-.061-1.816-.256-2.236-.421-.569-.224-.96-.479-1.379-.899-.421-.419-.69-.824-.9-1.38-.165-.42-.359-1.065-.42-2.235-.045-1.26-.061-1.649-.061-4.844 0-3.196.016-3.586.061-4.861.061-1.17.255-1.814.42-2.234.21-.57.479-.96.9-1.381.419-.419.81-.689 1.379-.898.42-.166 1.051-.361 2.221-.421 1.275-.045 1.65-.06 4.859-.06l.045.03zm0 3.678c-3.405 0-6.162 2.76-6.162 6.162 0 3.405 2.76 6.162 6.162 6.162 3.405 0 6.162-2.76 6.162-6.162 0-3.405-2.76-6.162-6.162-6.162zM12 16c-2.21 0-4-1.79-4-4s1.79-4 4-4 4 1.79 4 4-1.79 4-4 4zm7.846-10.405c0 .795-.646 1.44-1.44 1.44-.795 0-1.44-.646-1.44-1.44 0-.794.646-1.439 1.44-1.439.793-.001 1.44.645 1.44 1.439z"/></svg>
+                        </a>
+                        <a href="https://www.facebook.com/amarzukii26/" target="_blank" class="w-9 h-9 mr-3 rounded-full flex justify-center items-center border border-secondary text-secondary dark:border-slate-300 dark:text-slate-300 hover:border-primary hover:bg-primary hover:text-white">
+                            <svg class="fill-current" width="20" role="img" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><title>Facebook</title><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg>
+                        </a>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- about section end -->
+
+    <!-- tech section start -->
+    <section id="tech" class="pt-32 pb-32 bg-dark">
+        <div class="container">
+            <div class="w-full px-4">
+                <div class="mx-auto text-center mb-16">
+                    <h2 class="font-bold text-white text-3xl sm:text-4xl lg:text-5xl mb-4">Tech Stack</h2>
+                    <p class="font-medium text-base text-third lg:text-lg">
+                        <!-- My basically technology like PHP, JS, Bootsrap, and MySQL. Other technology is my small project. -->
+                        These are the technologies i've worked with
+                    </p>
+                </div>
+            </div>
+            <div class="w-full px-4">
+                <div class="flex flex-wrap items-center justify-center gap-3 md:gap-16">
+                    <a href="" class="bg-white rounded-lg px-2 max-w-[70px] mx-0 py-2 md:bg-transparent md:hover:bg-white md:hover:rounded-lg md:hover:shadow-sm md:hover:shadow-slate-300/50 md:grayscale md:opacity-60  transition duration-500 hover:grayscale-0 hover:opacity-100 lg:mx-6 xl:mx-8">
+                        <img src="dist/img/tech/html.png" alt="HTML">
+                    </a>
+                    <a href="" class="bg-white rounded-lg px-2 max-w-[70px] mx-0 py-2 md:bg-transparent md:hover:bg-white md:hover:rounded-lg md:hover:shadow-sm md:hover:shadow-slate-300/50 md:grayscale md:opacity-60  transition duration-500 hover:grayscale-0 hover:opacity-100 lg:mx-6 xl:mx-8">
+                        <img src="dist/img/tech/css3.png" alt="CSS">
+                    </a>
+                    <a href="" class="bg-white rounded-lg px-2 max-w-[70px] mx-0 py-2 md:bg-transparent md:hover:bg-white md:hover:rounded-lg md:hover:shadow-sm md:hover:shadow-slate-300/50 md:grayscale md:opacity-60  transition duration-500 hover:grayscale-0 hover:opacity-100 lg:mx-6 xl:mx-8">
+                        <img src="dist/img/tech/javascript.png" alt="Javascript">
+                    </a>
+                    <a href="" class="bg-white rounded-lg px-2 max-w-[70px] mx-0 py-2 md:bg-transparent md:hover:bg-white md:hover:rounded-lg md:hover:shadow-sm md:hover:shadow-slate-300/50 md:grayscale md:opacity-60  transition duration-500 hover:grayscale-0 hover:opacity-100 lg:mx-6 xl:mx-8">
+                        <img src="dist/img/tech/php.png" alt="PHP">
+                    </a>
+                    <a href="" class="bg-white rounded-lg px-2 max-w-[70px] mx-0 py-2 md:bg-transparent md:hover:bg-white md:hover:rounded-lg md:hover:shadow-sm md:hover:shadow-slate-300/50 md:grayscale md:opacity-60  transition duration-500 hover:grayscale-0 hover:opacity-100 lg:mx-6 xl:mx-8">
+                        <img src="dist/img/tech/mysql.png" alt="MySQL">
+                    </a>
+                    <a href="" class="bg-white rounded-lg px-2 max-w-[70px] mx-0 py-2 md:bg-transparent md:hover:bg-white md:hover:rounded-lg md:hover:shadow-sm md:hover:shadow-slate-300/50 md:grayscale md:opacity-60  transition duration-500 hover:grayscale-0 hover:opacity-100 lg:mx-6 xl:mx-8">
+                        <img src="dist/img/tech/jquery.png" alt="JQuery">
+                    </a>
+                    <a href="" class="bg-white rounded-lg px-2 max-w-[70px] mx-0 py-2 md:bg-transparent md:hover:bg-white md:hover:rounded-lg md:hover:shadow-sm md:hover:shadow-slate-300/50 md:grayscale md:opacity-60  transition duration-500 hover:grayscale-0 hover:opacity-100 lg:mx-6 xl:mx-8">
+                        <img src="dist/img/tech/bootstrap.png" alt="Bootstrap">
+                    </a>
+                    <a href="" class="bg-white rounded-lg px-2 max-w-[70px] mx-0 py-2 md:bg-transparent md:hover:bg-white md:hover:rounded-lg md:hover:shadow-sm md:hover:shadow-slate-300/50 md:grayscale md:opacity-60  transition duration-500 hover:grayscale-0 hover:opacity-100 lg:mx-6 xl:mx-8">
+                        <img src="dist/img/tech/laravel.png" alt="Laravel">
+                    </a>
+                    <a href="" class="bg-white rounded-lg px-2 max-w-[70px] mx-0 py-2 md:bg-transparent md:hover:bg-white md:hover:rounded-lg md:hover:shadow-sm md:hover:shadow-slate-300/50 md:grayscale md:opacity-60  transition duration-500 hover:grayscale-0 hover:opacity-100 lg:mx-6 xl:mx-8">
+                        <img src="dist/img/tech/tailwind.png" alt="Tailwindcss">
+                    </a>
+                    <a href="" class="bg-white rounded-lg px-2 max-w-[70px] mx-0 py-2 md:bg-transparent md:hover:bg-white md:hover:rounded-lg md:hover:shadow-sm md:hover:shadow-slate-300/50 md:grayscale md:opacity-60  transition duration-500 hover:grayscale-0 hover:opacity-100 lg:mx-6 xl:mx-8">
+                        <img src="dist/img/tech/react.png" alt="ReactJS">
+                    </a>
+                    <a href="" class="bg-white rounded-lg px-2 max-w-[70px] mx-0 py-2 md:bg-transparent md:hover:bg-white md:hover:rounded-lg md:hover:shadow-sm md:hover:shadow-slate-300/50 md:grayscale md:opacity-60  transition duration-500 hover:grayscale-0 hover:opacity-100 lg:mx-6 xl:mx-8">
+                        <img src="dist/img/tech/nodejs.png" alt="NodeJS">
+                    </a>
+                    <a href="" class="bg-white rounded-lg px-2 max-w-[70px] mx-0 py-2 md:bg-transparent md:hover:bg-white md:hover:rounded-lg md:hover:shadow-sm md:hover:shadow-slate-300/50 md:grayscale md:opacity-60  transition duration-500 hover:grayscale-0 hover:opacity-100 lg:mx-6 xl:mx-8">
+                        <img src="dist/img/tech/github.png" alt="Github">
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- tech section end -->
+
+    <!-- portfolio section start -->
+    <section id="portfolio" class="pt-32 pb-32 bg-slate-100 dark:bg-slate-800 ">
+        <div class="container">
+            <div class="w-full px-4">
+                <div class="max-w-xl mx-auto text-center mb-16">
+                    <h4 class="font-semibold text-lg text-primary mb-2">Portfolio</h4>
+                    <h2 class="font-bold text-dark dark:text-white text-3xl sm:text-4xl lg:text-5xl mb-4">Work & Project</h2>
+                    <p class="font-medium text-md md:text-lg text-secondary dark:text-third">
+                        <!-- Check out some of my work & project -->
+                        Check out some of my portfolio
+                    </p>
+                </div>
+            </div>
+            <div class="flex flex-wrap">
+                <div class="w-full px-4 lg:w-1/2 xl:w-1/3">
+                    <div class="bg-white dark:bg-dark rounded-xl shadow-lg overflow-hidden mb-10">
+                        <!-- size img 360x200 -->
+                        <img src="./dist/img/project/reactjs6.png" alt="programing" class="w-full">
+                        <div class="py-8 px-6">
+                            <h3>
+                                <a href="" class="block mb-3 font-semibold text-xl text-dark dark:text-white hover:text-primary truncate">Tips Belajar Programming 1</a>
+                            </h3>
+                            <p class="font-medium text-base text-secondary dark:text-third mb-6">Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
+                            <a href="" class="font-medium text-small text-white bg-primary py-2 px-4 rounded-lg hover:opacity-80">Demo</a>
+                            <a href="" class="font-medium text-small text-white bg-secondary py-2 px-4 rounded-lg hover:opacity-80">Code</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="w-full px-4 lg:w-1/2 xl:w-1/3">
+                    <div class="bg-white dark:bg-dark rounded-xl shadow-lg overflow-hidden mb-10">
+                        <!-- size img 360x200 -->
+                        <img src="./dist/img/project/reactjs6.png" alt="programing" class="w-full">
+                        <div class="py-8 px-6">
+                            <h3>
+                                <a href="" class="block mb-3 font-semibold text-xl text-dark dark:text-white hover:text-primary truncate">Tips Belajar Programming 1</a>
+                            </h3>
+                            <p class="font-medium text-base text-secondary dark:text-third mb-6">Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
+                            <a href="" class="font-medium text-small text-white bg-primary py-2 px-4 rounded-lg hover:opacity-80">Demo</a>
+                            <a href="" class="font-medium text-small text-white bg-secondary py-2 px-4 rounded-lg hover:opacity-80">Code</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="w-full px-4 lg:w-1/2 xl:w-1/3">
+                    <div class="bg-white dark:bg-dark rounded-xl shadow-lg overflow-hidden mb-10">
+                        <!-- size img 360x200 -->
+                        <img src="./dist/img/project/reactjs6.png" alt="programing" class="w-full">
+                        <div class="py-8 px-6">
+                            <h3>
+                                <a href="" class="block mb-3 font-semibold text-xl text-dark dark:text-white hover:text-primary truncate">Tips Belajar Programming 1</a>
+                            </h3>
+                            <p class="font-medium text-base text-secondary dark:text-third mb-6">Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
+                            <a href="" class="font-medium text-small text-white bg-primary py-2 px-4 rounded-lg hover:opacity-80">Demo</a>
+                            <a href="" class="font-medium text-small text-white bg-secondary py-2 px-4 rounded-lg hover:opacity-80">Code</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="w-full px-4 lg:w-1/2 xl:w-1/3">
+                    <div class="bg-white dark:bg-dark rounded-xl shadow-lg overflow-hidden mb-10">
+                        <!-- size img 360x200 -->
+                        <img src="./dist/img/project/reactjs6.png" alt="programing" class="w-full">
+                        <div class="py-8 px-6">
+                            <h3>
+                                <a href="" class="block mb-3 font-semibold text-xl text-dark dark:text-white hover:text-primary truncate">Tips Belajar Programming 1</a>
+                            </h3>
+                            <p class="font-medium text-base text-secondary dark:text-third mb-6">Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
+                            <a href="" class="font-medium text-small text-white bg-primary py-2 px-4 rounded-lg hover:opacity-80">Demo</a>
+                            <a href="" class="font-medium text-small text-white bg-secondary py-2 px-4 rounded-lg hover:opacity-80">Code</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="w-full px-4 lg:w-1/2 xl:w-1/3">
+                    <div class="bg-white dark:bg-dark rounded-xl shadow-lg overflow-hidden mb-10">
+                        <!-- size img 360x200 -->
+                        <img src="./dist/img/project/reactjs6.png" alt="programing" class="w-full">
+                        <div class="py-8 px-6">
+                            <h3>
+                                <a href="" class="block mb-3 font-semibold text-xl text-dark dark:text-white hover:text-primary truncate">Tips Belajar Programming 1</a>
+                            </h3>
+                            <p class="font-medium text-base text-secondary dark:text-third mb-6">Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
+                            <a href="" class="font-medium text-small text-white bg-primary py-2 px-4 rounded-lg hover:opacity-80">Demo</a>
+                            <a href="" class="font-medium text-small text-white bg-secondary py-2 px-4 rounded-lg hover:opacity-80">Code</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="w-full px-4 lg:w-1/2 xl:w-1/3">
+                    <div class="bg-white dark:bg-dark rounded-xl shadow-lg overflow-hidden mb-10">
+                        <!-- size img 360x200 -->
+                        <img src="./dist/img/project/reactjs6.png" alt="programing" class="w-full">
+                        <div class="py-8 px-6">
+                            <h3>
+                                <a href="" class="block mb-3 font-semibold text-xl text-dark dark:text-white hover:text-primary truncate">Tips Belajar Programming 1</a>
+                            </h3>
+                            <p class="font-medium text-base text-secondary dark:text-third mb-6">Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
+                            <a href="" class="font-medium text-small text-white bg-primary py-2 px-4 rounded-lg hover:opacity-80">Demo</a>
+                            <a href="" class="font-medium text-small text-white bg-secondary py-2 px-4 rounded-lg hover:opacity-80">Code</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- portfolio section end -->
+
+    <!-- contact section start -->
+    <section id="contact" class="pt-32 pb-32 dark:bg-dark ">
+        <div class="container">
+            <div class="w-full px-4">
+                <div class="max-w-xl mx-auto text-center mb-16">
+                    <h4 class="font-semibold text-lg text-primary mb-2">Contact</h4>
+                    <h2 class="font-bold text-dark dark:text-white text-3xl sm:text-4xl lg:text-5xl mb-4">Any Questions?</h2>
+                    <p class="font-medium text-md md:text-lg text-secondary dark:text-third">
+                        Thank you for visiting my website. If there are question you can leave the message on the form, have nice day 😇
+                    </p>
+                </div>
+            </div>
+            <form name="contact-form">
+                <div class="w-full lg:w-2/3 lg:mx-auto">
+                    <div class="w-full px-4 mb-8">
+                        <!-- <label for="name" class="text-base text-primary font-bold">Nama</label> -->
+                        <input type="text" name="nama" id="nama" placeholder="Your Full Name" class="w-full bg-slate-200 text-dark p-3 rounded-md focus:outline-none focus:ring-primary focus:ring-1 focus:border-primary">
+                    </div>
+                    <div class="w-full px-4 mb-8">
+                        <!-- <label for="email" class="text-base text-primary font-bold">Email</label> -->
+                        <input type="email" name="email" id="email" placeholder="Your Email Address" class="w-full bg-slate-200 text-dark p-3 rounded-md focus:outline-none focus:ring-primary focus:ring-1 focus:border-primary">
+                    </div>
+                    <div class="w-full px-4 mb-8">
+                        <input type="text" name="subjek" id="subjek" placeholder="Subject" class="w-full bg-slate-200 text-dark p-3 rounded-md focus:outline-none focus:ring-primary focus:ring-1 focus:border-primary">
+                    </div>
+                    <div class="w-full px-4 mb-8">
+                        <!-- <label for="message" class="text-base text-primary font-bold">Pesan</label> -->
+                        <textarea type="email" name="pesan" id="pesan" placeholder="Your Message" class="w-full bg-slate-200 text-dark p-3 rounded-md focus:outline-none focus:ring-primary focus:ring-1 focus:border-primary" cols="30" rows="10"></textarea>
+                    </div>
+                    <div id="alert-error" class="hidden flex rounded-md w-fit py-2 px-3 mx-auto bg-red-400 text-white">
+                        Sorry, Error 😣  
+                    </div>
+                    <div id="alert-success" class="hidden flex rounded-md w-fit py-2 px-3 mx-auto mb-8 bg-green-400 text-white">
+                        Your message has been sent. Thank you!
+                    </div>
+                    <div id="alert-loading" class="hidden flex rounded-md w-fit py-2 px-3 mx-auto bg-blue-400 text-white">
+                        <?xml version="1.0" ?><svg fill="none" class=" animate-spin" height="24" viewBox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg"><path clip-rule="evenodd" d="M12 19C15.866 19 19 15.866 19 12C19 8.13401 15.866 5 12 5C8.13401 5 5 8.13401 5 12C5 15.866 8.13401 19 12 19ZM12 22C17.5228 22 22 17.5228 22 12C22 6.47715 17.5228 2 12 2C6.47715 2 2 6.47715 2 12C2 17.5228 6.47715 22 12 22Z" fill="currentColor" fill-rule="evenodd" opacity="0.2"/><path d="M2 12C2 6.47715 6.47715 2 12 2V5C8.13401 5 5 8.13401 5 12H2Z" fill="currentColor"/></svg>
+                        &nbsp; Loading ... 
+                    </div>
+                    <div id="btnSend" class="w-full px-4 flex justify-center">
+                        <button class="text-base font-semibold text-white bg-primary py-3 px-8 rounded-lg hover:opacity-80 hover:shadow-lg transition duration-500">Send Message</button>
+                    </div>
+                </div>
+            </form>
+        </div> 
+    </section>
+    <!-- contact section end -->
+
+    <!-- footer section start -->
+    <footer class="bg-dark dark:bg-slate-800 pt-10 pb-10">
+        <div class="container">
+            <div class="flex items-center justify-center mb-5">
+                <a href="https://github.com/kiigeeks" target="_blank" class="w-9 h-9 mr-3 rounded-full flex justify-center items-center border border-secondary text-secondary dark:border-slate-300 dark:text-slate-300 hover:border-primary hover:bg-primary hover:text-white">
+                    <svg class="fill-current" width="20" role="img" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><title>GitHub</title><path d="M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12"/></svg>
+                </a>
+                <a href="https://www.linkedin.com/in/ahmad-marzukii/" target="_blank" class="w-9 h-9 mr-3 rounded-full flex justify-center items-center border border-secondary text-secondary dark:border-slate-300 dark:text-slate-300 hover:border-primary hover:bg-primary hover:text-white">
+                    <svg class="fill-current" width="20" role="img" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><title>LinkedIn</title><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
+                </a>
+                <a href="https://mail.google.com/mail/?view=cm&fs=1&to=marjukiiahmad@gmail.com" target="_blank" class="w-9 h-9 mr-3 rounded-full flex justify-center items-center border border-secondary text-secondary dark:border-slate-300 dark:text-slate-300 hover:border-primary hover:bg-primary hover:text-white">
+                    <svg class="fill-current" width="20" role="img" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><title>Gmail</title><path d="M24 5.457v13.909c0 .904-.732 1.636-1.636 1.636h-3.819V11.73L12 16.64l-6.545-4.91v9.273H1.636A1.636 1.636 0 0 1 0 19.366V5.457c0-2.023 2.309-3.178 3.927-1.964L5.455 4.64 12 9.548l6.545-4.91 1.528-1.145C21.69 2.28 24 3.434 24 5.457z"/></svg>
+                </a>
+                <a href="https://www.instagram.com/amarzukii26/" target="_blank" class="w-9 h-9 mr-3 rounded-full flex justify-center items-center border border-secondary text-secondary dark:border-slate-300 dark:text-slate-300 hover:border-primary hover:bg-primary hover:text-white">
+                    <svg class="fill-current" width="20" role="img" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><title>Instagram</title><path d="M12 0C8.74 0 8.333.015 7.053.072 5.775.132 4.905.333 4.14.63c-.789.306-1.459.717-2.126 1.384S.935 3.35.63 4.14C.333 4.905.131 5.775.072 7.053.012 8.333 0 8.74 0 12s.015 3.667.072 4.947c.06 1.277.261 2.148.558 2.913.306.788.717 1.459 1.384 2.126.667.666 1.336 1.079 2.126 1.384.766.296 1.636.499 2.913.558C8.333 23.988 8.74 24 12 24s3.667-.015 4.947-.072c1.277-.06 2.148-.262 2.913-.558.788-.306 1.459-.718 2.126-1.384.666-.667 1.079-1.335 1.384-2.126.296-.765.499-1.636.558-2.913.06-1.28.072-1.687.072-4.947s-.015-3.667-.072-4.947c-.06-1.277-.262-2.149-.558-2.913-.306-.789-.718-1.459-1.384-2.126C21.319 1.347 20.651.935 19.86.63c-.765-.297-1.636-.499-2.913-.558C15.667.012 15.26 0 12 0zm0 2.16c3.203 0 3.585.016 4.85.071 1.17.055 1.805.249 2.227.415.562.217.96.477 1.382.896.419.42.679.819.896 1.381.164.422.36 1.057.413 2.227.057 1.266.07 1.646.07 4.85s-.015 3.585-.074 4.85c-.061 1.17-.256 1.805-.421 2.227-.224.562-.479.96-.899 1.382-.419.419-.824.679-1.38.896-.42.164-1.065.36-2.235.413-1.274.057-1.649.07-4.859.07-3.211 0-3.586-.015-4.859-.074-1.171-.061-1.816-.256-2.236-.421-.569-.224-.96-.479-1.379-.899-.421-.419-.69-.824-.9-1.38-.165-.42-.359-1.065-.42-2.235-.045-1.26-.061-1.649-.061-4.844 0-3.196.016-3.586.061-4.861.061-1.17.255-1.814.42-2.234.21-.57.479-.96.9-1.381.419-.419.81-.689 1.379-.898.42-.166 1.051-.361 2.221-.421 1.275-.045 1.65-.06 4.859-.06l.045.03zm0 3.678c-3.405 0-6.162 2.76-6.162 6.162 0 3.405 2.76 6.162 6.162 6.162 3.405 0 6.162-2.76 6.162-6.162 0-3.405-2.76-6.162-6.162-6.162zM12 16c-2.21 0-4-1.79-4-4s1.79-4 4-4 4 1.79 4 4-1.79 4-4 4zm7.846-10.405c0 .795-.646 1.44-1.44 1.44-.795 0-1.44-.646-1.44-1.44 0-.794.646-1.439 1.44-1.439.793-.001 1.44.645 1.44 1.439z"/></svg>
+                </a>
+                <a href="https://www.facebook.com/amarzukii26/" target="_blank" class="w-9 h-9 mr-3 rounded-full flex justify-center items-center border border-secondary text-secondary dark:border-slate-300 dark:text-slate-300 hover:border-primary hover:bg-primary hover:text-white">
+                    <svg class="fill-current" width="20" role="img" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><title>Facebook</title><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg>
+                </a>
+            </div>
+            <div class="w-full pt-5 border-t border-slate-700">
+                <p class="font-medium text-sm text-slate-500 text-center">&copy; Copyright <a href="#home" class="font-bold text-primary text-base">Marzuki</a> 2022</p>
+            </div>
+        </div>
+    </footer>
+    <!-- footer section end -->
+
+    <!-- back to top start -->
+    <a href="#home" id="to-top" class=" animate-bounce-slow fixed hidden bottom-4 right-4 z-[9999] justify-center items-center h-fit w-fit rounded-full bg-blue-500 hover:animate-pulse text-white">
+        <img src="./dist/img/top.png" alt="" class="block w-12 h-12 p-3">
+    </a>
+    <!-- back to top end -->
+
+    <script src="./dist/js/script.js"></script>
+    <script src="./dist/js/autotyping.js"></script>
+</body>
+</html>
